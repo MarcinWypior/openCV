@@ -57,6 +57,7 @@ while True:
         h,w,c = overlayList[totalFingers-1].shape
         img[0:h, 0:w] = overlayList[totalFingers-1]
 
+    #fps calculation
     cTime = time.time()
     fps = 1/(cTime - pTime)
     pTime = cTime
