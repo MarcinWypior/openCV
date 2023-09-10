@@ -40,7 +40,7 @@ class handDetector():
                 cx, cy = int(lm.x * w), int(lm.y * h)
                 lmList.append([id,cx,cy])
                 if draw:
-                    cv2.circle(img, (cx, cy), 15, (255, 0, 255), cv2.FILLED)
+                    cv2.circle(img, (cx, cy), 15, (0,0, 255), cv2.FILLED)
 
         return lmList
 def main():
@@ -51,8 +51,8 @@ def main():
 
     while True:
         success, img = cap.read()
-        img = detector.findHands(img,draw=False)
-        lmList = detector.findPosition(img,draw=False)
+        img = detector.findHands(img,draw=True)
+        lmList = detector.findPosition(img,draw=True)
         if len(lmList) != 0:
             print(lmList[4])
 
